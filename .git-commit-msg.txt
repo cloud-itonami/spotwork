@@ -1,0 +1,24 @@
+spotwork: extract to cloud-itonami/spotwork as a reusable library repo
+
+ADR-2608292100 decision 1 said the pure .cljc spotwork core (spotwork.*
+namespaces, root-independent) "can be moved to a cloud-itonami leaf repo once
+push access is available; that migration is a separate ADR". This repo is it.
+
+- Src + test byte-identical to the com-junkawasaki/root 70-tools/spotwork/
+  HEAD blobs (governor/match/proposal/fingerprint/facts/time + fixtures + tests).
+- README rewritten from root-path references to leaf (policy + resident bots +
+  design ADR stay in root; this repo is the reusable library).
+- deps.edn added (zero third-party runtime deps; clojure -M:test cognitect
+  test-runner + clojure -M:lint clj-kondo, mirroring kotoba-lang/bmc), so the
+  leaf is self-contained instead of relying on root nbb.edn :paths.
+
+Verified: clojure -M:test = 45 tests / 127 assertions, 0 failures;
+clojure -M:lint = 0 errors / 0 warnings.
+
+NOT in this commit: the .kotoba rewrite of spotwork. spotwork lives in the
+cloud-itonami org, which Q9 migration authority (kotoba-lang/kotoba-lang/
+lang/q9-migration.edn) classifies in wave-4 (:not-authorized) — wave-1 (leaf
+libraries, authorized/in-progress) covers kotoba-lang org com-* repos only.
+Per the migration skill's rule (an unauthorized wave produces work that must
+be rolled back), the .kotoba rewrite is deliberately held for a wave-4
+authorization; the .cljc extraction is the authorized, shippable unit today.
