@@ -2,7 +2,7 @@
  ;; Pure portable .cljc — zero third-party runtime deps (ADR-2608292100).
  ;; The only #?(:clj)/#?(:cljs) split is the wall-clock edge in spotwork.proposal
  ;; (clj: java.time.Instant / cljs: js/Date). Tests run under cognitect test-runner
- ;; (JVM) or nbb (run-tests.cljs); both exercise the same *_test.cljc namespace set.
+ ;; (JVM) or nbb (run-tests.kotoba); both exercise the same *_test.cljc namespace set.
  :deps {}
  :aliases
  {:test {:extra-paths ["test"]
