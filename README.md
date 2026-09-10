@@ -13,7 +13,7 @@ cloud-itonami 配下の子リポへ移せる形にしてある」と予告して
 - 設計の正本: root `90-docs/adr/2608292100-cloud-itonami-spotwork-matching-governed-bots.edn`
 
 ```bash
-nbb run-tests.cljs                                # この repo 単体: exit 0 / 1 / 2
+nbb run-tests.kotoba                                # この repo 単体: exit 0 / 1 / 2
 nbb scripts/spotwork-match-tick.cljs              # (root) 現在地と次の候補
 nbb scripts/spotwork-match-tick.cljs --emit <offer-id>  # (root) 提案 1 行（決定論）
 ```
@@ -72,7 +72,7 @@ actor 側へ戻らない。
 数をここに書かない（書けば日付を落として引用される）。測るのは:
 
 ```bash
-nbb run-tests.cljs                        # この repo 単体: 規則の整合・1 対 1・理由の pin・確定系の不自動化
+nbb run-tests.kotoba                        # この repo 単体: 規則の整合・1 対 1・理由の pin・確定系の不自動化
 nbb scripts/spotwork-match-tick.cljs      # (root) 求人と cohort の件数、台帳の verdict 内訳、床
 ```
 
