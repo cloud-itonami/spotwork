@@ -14,8 +14,8 @@ cloud-itonami 配下の子リポへ移せる形にしてある」と予告して
 
 ```bash
 nbb run-tests.kotoba                                # この repo 単体: exit 0 / 1 / 2
-nbb scripts/spotwork-match-tick.cljs              # (root) 現在地と次の候補
-nbb scripts/spotwork-match-tick.cljs --emit <offer-id>  # (root) 提案 1 行（決定論）
+kbb --backend sci scripts/spotwork-match-tick.cljk              # (root) 現在地と次の候補
+kbb --backend sci scripts/spotwork-match-tick.cljk --emit <offer-id>  # (root) 提案 1 行（決定論）
 ```
 
 ## 何を持っていて、何を持っていないか
@@ -73,7 +73,7 @@ actor 側へ戻らない。
 
 ```bash
 nbb run-tests.kotoba                        # この repo 単体: 規則の整合・1 対 1・理由の pin・確定系の不自動化
-nbb scripts/spotwork-match-tick.cljs      # (root) 求人と cohort の件数、台帳の verdict 内訳、床
+kbb --backend sci scripts/spotwork-match-tick.cljk      # (root) 求人と cohort の件数、台帳の verdict 内訳、床
 ```
 
 ⚠ `80-data/spotwork/` に入っているのは **fixture であって実需要ではない**。
