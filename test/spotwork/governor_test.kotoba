@@ -1,7 +1,7 @@
 (ns spotwork.governor-test
   "governor の負テストは **理由の literal を pin する**。「拒否された」だけを
   assert すると、別の原因で落ちた実行を「その規則が discriminate した」として
-  数えてしまう（CLAUDE.md が 2026-08-22 の 4 件で記録した形）。
+  数えてしまう（AGENTS.md が 2026-08-22 の 4 件で記録した形）。
 
   各テストは `lawful-offer` を **1 箇所だけ**壊して、報告された rule id が
   壊した箇所と一致することを見る。"

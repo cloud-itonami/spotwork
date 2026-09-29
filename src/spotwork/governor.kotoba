@@ -9,7 +9,7 @@
      verdict でも決して `:pass` に畳まれない（ADR-2608136000）。
   2. **拒否は理由の literal で表す。** `[:error :rule/id …]` の形で返し、真偽値で
      返さない —— truthy 判定は「空でない拒否」を成功として通す
-     （CLAUDE.md が記録した `tls.cert` の実事故と同じ形）。
+     （AGENTS.md が記録した `tls.cert` の実事故と同じ形）。
   3. **マッチ確定と就業確定はどの phase でも自動化しない。** `phase-table` の
      `:auto` 集合に `:actuation/confirm-match` / `:actuation/place-worker` は
      どの行にも入らない。人間のオペレータだけが確定する。
