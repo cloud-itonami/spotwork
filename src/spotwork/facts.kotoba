@@ -20,7 +20,7 @@
   `:basis/url` は**意図的に nil**で、`:basis/url-status :not-recorded` を隣に
   置いている。法令名・公布番号・条番号は確認できるが、e-Gov の法令 ID を
   記憶から書けば、それは**根拠として引用できる形をした未検証の値**になる。
-  記録が無いことは UNVERIFIED であって CONFORMANT ではない（CLAUDE.md）。
+  記録が無いことは UNVERIFIED であって CONFORMANT ではない（AGENTS.md）。
   オペレータが URL を入れるときは `with-basis-urls` を通す。
 
   ## 法域を足すとき
@@ -247,7 +247,7 @@
   "カタログ自身の床。`[:ok n]` か `[:error reason detail]`。
 
   例外を投げない（`.kotoba` へ移す前提の `.cljc` なので Result で返す。
-  CLAUDE.md「`throw` / `try` / `catch` を使わず `[:result T E]` を返す」）。"
+  AGENTS.md「`throw` / `try` / `catch` を使わず `[:result T E]` を返す」）。"
   []
   (let [problems
         (for [[j jd] catalog

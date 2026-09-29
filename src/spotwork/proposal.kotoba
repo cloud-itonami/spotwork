@@ -11,7 +11,7 @@
   3. **個人識別子が載らない。** cohort 集計だけを載せる。`validate` が拒否する。
 
   例外は投げない。`[:ok entry]` / `[:error reason detail]` を返す
-  （CLAUDE.md の Result 規約）。"
+  （AGENTS.md の Result 規約）。"
   (:require [spotwork.governor :as gov]
             [spotwork.fingerprint :as fp]
             [spotwork.match :as match]
@@ -77,7 +77,7 @@
   "台帳に積んでよい行か。`[:ok entry]` / `[:error :reason detail]`。
 
   拒否の理由は**必ず literal の keyword** で返す。真偽値で返すと、呼び手の
-  truthy 判定が「空でない拒否」を成功として通す（CLAUDE.md が記録した
+  truthy 判定が「空でない拒否」を成功として通す（AGENTS.md が記録した
   `tls.cert` の事故と同じ形）。"
   [entry]
   (let [missing (vec (sort (remove #(contains? entry %) required-keys)))]
